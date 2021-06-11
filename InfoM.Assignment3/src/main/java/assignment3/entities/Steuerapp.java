@@ -34,7 +34,7 @@ public class Steuerapp {
 	}
 
 	public Steuerapp() {
-		
+
 	}
 
 	public long getAppid() {
@@ -56,7 +56,5 @@ public class Steuerapp {
 	public Steuererklärung getSteuererklärung() {
 		return this.steuererklärung;
 	}
-	
-	
-	
+
 }
