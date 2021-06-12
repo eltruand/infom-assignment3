@@ -1,35 +1,38 @@
 package assignment3.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Steuerapp {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private long appid;
 
-	private long erstellungsdatum;
+	private long version;
 
 	@OneToMany
 	@JoinColumn(name = "userid")
 	private User user;
 
-	@OneToMany
+	@OneToOne(mappedBy = "adminteam")
 	private Adminteam adminteam;
 
 	@OneToMany
+	@JoinColumn(name = "steuererklärungid")
 	private Steuererklärung steuererklärung;
 
-	public Steuerapp(long appid, long erstellungsdatum, User user, Adminteam adminteam,
-			Steuererklärung steuererklärung) {
+	public Steuerapp(long appid, long version, User user, Adminteam adminteam, Steuererklärung steuererklärung) {
 		this.appid = appid;
-		this.erstellungsdatum = erstellungsdatum;
+		this.version = version;
 		this.user = user;
 		this.adminteam = adminteam;
 		this.steuererklärung = steuererklärung;
@@ -43,8 +46,8 @@ public class Steuerapp {
 		return this.appid;
 	}
 
-	public long getErstellungsdatum() {
-		return this.erstellungsdatum;
+	public long getVersion() {
+		return this.version;
 	}
 
 	public User getUser() {
