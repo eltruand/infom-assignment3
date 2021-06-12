@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import assignment3.entities.User;
 import assignment3.repositories.SteuerappRepository;
-import assignment3.repositories.SteuererklärungRepository;
-import assignment3.repositories.UserRepository;
+
+//@Author Dominic
 
 @RestController
 @CrossOrigin
@@ -22,12 +22,6 @@ public class SteuerappRestController {
 
 	@Autowired
 	private SteuerappRepository repository;
-
-	@Autowired
-	private SteuererklärungRepository steuererklärungrepository;
-
-	@Autowired
-	private UserRepository userrepository;
 
 	@RequestMapping(value = "assignment3/users/{steuerid}/{erstelldatum}", method = RequestMethod.GET)
 	public ResponseEntity<List<User>> getUsersBySteuererklärungByErstelldatum(

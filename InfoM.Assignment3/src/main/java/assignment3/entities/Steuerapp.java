@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+//@Author Dominic
+
 @Entity
 public class Steuerapp {
 

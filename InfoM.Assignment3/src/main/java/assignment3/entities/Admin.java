@@ -8,9 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+//@Author Elif
+
 @Entity
 public class Admin {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long adminid;

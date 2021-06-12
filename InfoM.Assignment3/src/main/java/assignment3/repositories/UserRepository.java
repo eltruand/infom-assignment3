@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import assignment3.entities.User;
 
+//@Author Ozan
 
 public interface UserRepository extends JpaRepository <User, Long> {
 	

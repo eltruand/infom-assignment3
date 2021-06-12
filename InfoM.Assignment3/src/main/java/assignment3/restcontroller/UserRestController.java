@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import assignment3.entities.User;
 import assignment3.repositories.UserRepository;
 
+//@Author Ozan
+
 @RestController
 @CrossOrigin
 public class UserRestController {
