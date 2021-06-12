@@ -6,6 +6,6 @@ import assignment3.entities.Steuerapp;
 
 public interface SteuerappRepository extends JpaRepository<Steuerapp, Long> {
 
-	
+	//SELECT USER WHERE FK_STEUERERKLÄRUNG == ID_STEUERERKLÄRUNG && FK_USER == ID_USER
 	
 }

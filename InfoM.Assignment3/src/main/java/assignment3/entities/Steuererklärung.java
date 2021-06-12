@@ -15,8 +15,38 @@ public class Steuererklärung {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long steuererklärungid;
 
+	private int erstelldatum;
+	private String kanton;
+	private int einkommen;
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "appid", referencedColumnName = "id")
 	private Steuerapp steuerapp;
+
+	public Steuererklärung() {
+
+	}
+
+	public Steuererklärung(int erstelldatum, String kanton, int einkommen) {
+		this.erstelldatum = erstelldatum;
+		this.kanton = kanton;
+		this.einkommen = einkommen;
+	}
+
+	public long getSteuererklärungid() {
+		return this.steuererklärungid;
+	}
+
+	public int getErstelldatum() {
+		return erstelldatum;
+	}
+
+	public String getKanton() {
+		return kanton;
+	}
+
+	public int getEinkommen() {
+		return einkommen;
+	}
 
 }

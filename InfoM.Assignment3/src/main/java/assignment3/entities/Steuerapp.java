@@ -22,17 +22,17 @@ public class Steuerapp {
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private User user;
 
-	@OneToOne(mappedBy = "adminteam")
-	private Adminteam adminteam;
+	@OneToMany(mappedBy = "admin", cascade = CascadeType.ALL)
+	private Admin admin;
 
 	@OneToMany(mappedBy = "steuererklärung", cascade = CascadeType.ALL)
 	private Steuererklärung steuererklärung;
 
-	public Steuerapp(long appid, long version, User user, Adminteam adminteam, Steuererklärung steuererklärung) {
+	public Steuerapp(long appid, long version, User user, Admin admin, Steuererklärung steuererklärung) {
 		this.appid = appid;
 		this.version = version;
 		this.user = user;
-		this.adminteam = adminteam;
+		this.admin = admin;
 		this.steuererklärung = steuererklärung;
 	}
 
@@ -52,8 +52,8 @@ public class Steuerapp {
 		return this.user;
 	}
 
-	public Adminteam getAdminteam() {
-		return this.adminteam;
+	public Admin getAdmin() {
+		return this.admin;
 	}
 
 	public Steuererklärung getSteuererklärung() {
