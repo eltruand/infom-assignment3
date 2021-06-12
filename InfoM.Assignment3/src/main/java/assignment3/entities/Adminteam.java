@@ -16,7 +16,7 @@ public class Adminteam {
 
 	// brauch ich für OneToOne auf Steuerapp-Seite
 	@OneToOne
-	@JoinColumn(name = "appid", referencedColumnName="id")
+	@JoinColumn(name = "appid", referencedColumnName = "id")
 	private Steuerapp steuerapp;
 
 }

@@ -1,11 +1,11 @@
 package assignment3.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -19,15 +19,13 @@ public class Steuerapp {
 
 	private long version;
 
-	@OneToMany
-	@JoinColumn(name = "userid")
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private User user;
 
 	@OneToOne(mappedBy = "adminteam")
 	private Adminteam adminteam;
 
-	@OneToMany
-	@JoinColumn(name = "steuererklärungid")
+	@OneToMany(mappedBy = "steuererklärung", cascade = CascadeType.ALL)
 	private Steuererklärung steuererklärung;
 
 	public Steuerapp(long appid, long version, User user, Adminteam adminteam, Steuererklärung steuererklärung) {
