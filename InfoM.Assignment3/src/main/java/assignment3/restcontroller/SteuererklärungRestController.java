@@ -21,7 +21,7 @@ public class SteuererklärungRestController {
 	@Autowired
 	private SteuererklärungRepository repository;
 
-	@RequestMapping(value = "steuerapp/steuererklärung", method = RequestMethod.GET)
+	@RequestMapping(value = "assignment3/steuererklärung", method = RequestMethod.GET)
 	public ResponseEntity<List<Steuererklärung>> getSteuererklärung() {
 		List<Steuererklärung> result = this.repository.findAll();
 

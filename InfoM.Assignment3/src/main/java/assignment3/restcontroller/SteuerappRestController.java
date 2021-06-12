@@ -24,5 +24,8 @@ public class SteuerappRestController {
 
 	@Autowired
 	private AdminRepository adminrepository;
+	
+	
+	@RequestMap
 
 }
